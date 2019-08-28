@@ -16,19 +16,25 @@
     // Create a post object with an id and title that is frozen
     // Test whether you can reassign each of the variables
     // Log out each of the variables to the page
-
-
+    const UserNsme="Hala";
+    let loggedIn="1234567";
+    const obj={
+      Id:38,
+      Title:"Practice1",
+    }
+    Object.freeze(obj);
+    obj.Title = "hala";
+    console.log("ID: ",obj.Id);
+    console.log("Title: ",obj.Title);
 
     // Practice 2 - Template Literals
     // Create a variable for firstName and lastName
     // Create a variable called message that can be reassigned
     // Use a template literal to create message like "Hi firstName lastName!"
     // Log out the message to the console
-    const firstName = "";
-    const lastName = ""
-
-    let message = ``;
-
+    const firstName = " Hala";
+    const lastName = "AL-Najdawi"
+    let message = `Hi ${firstName} ${lastName}!`;
     console.log(message);
 
 
@@ -37,12 +43,17 @@
     // Name the arrow function ArrowName
     // Log the value of ArrowName passing in your name as a parameter
 
-    function MyName(name) {
-      return (
-        `<p>${name}<p>`
-      )
-    }
-
+    // function MyName(name) {
+    //   return (
+    //     `<p>${name}<p>`
+    //   )
+    // }
+let MyName=(name)=>{
+  return(
+    `<p>${name}<p>`
+  )
+   
+ }
 
 
     // Practice 4 - .filter() and .map()
@@ -64,7 +75,17 @@
         title: "Last one"
       }
     ];
-
+let result=posts.filter((element)=>
+element.title.includes("post")
+)
+.map((element)=>
+element.title)
+console.log("RESULT: ",result)
+console.log("__________________");
+// let result_Map=posts.map((element)=>
+// element.title
+// )
+//console.log("RESULT _Map: ",result_Map)
 
 
     // Practice 5 - DOM Creation
@@ -90,6 +111,15 @@
         title: "Last one"
       }
     ];
+postsArray.map((element)=>{
+
+let h2 = document.createElement("h2");
+let txt = document.createTextNode(element.title);
+console.log(postsContainer.appendChild(h2))
+h2.appendChild(txt);
+postsContainer.appendChild(h2);
+})
+
 
 
   </script>
