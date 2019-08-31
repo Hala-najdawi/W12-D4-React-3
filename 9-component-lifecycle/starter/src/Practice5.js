@@ -52,7 +52,14 @@ class BarChart extends React.Component {
     7. Inside of componentWillUnmount() log out that the <BarChart /> Component is unmounting
     8. The call this.props.stopTimer(); to stop the timer from running
   */
-
+// componentWillUnmount(){
+//   console.log("<BarChart/> Component is unmounting....");
+//   this.props.stopTimer();
+// }
+componentWillUnmount() {
+  console.log("<BarChart /> Unmounting...");
+  
+}
   render() {
     const barStyles = {
       height: "100px",
