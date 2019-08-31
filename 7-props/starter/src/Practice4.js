@@ -15,7 +15,10 @@ const Practice4 = () => {
       {/*         
         1. Spread the "user" object into User so each "user" property becomes it's own prop
       */}
-      <User />
+       <User {...user}/> 
+       {/* <User id={props.id} username={props.username}firstName={props.firstName}lastName={props.lastName}
+       preferredName={props.preferredName}url={props.url}twitter={props.twitter}
+       />  */}
     </div>
   );
 };
@@ -23,11 +26,11 @@ const Practice4 = () => {
 /*
   2. Destructure username and firstName from props
 */
-const User = props => {
+const User =({ firstName,username}) => {
   return (
     <div className="user">
-      <h1>Hi FIRSTNAME_HERE!</h1>
-      <p>Username: USERNAME_HERE</p>
+      <h1>Hi {firstName}</h1>
+      <p>Username:{username}</p>
     </div>
   );
 };
